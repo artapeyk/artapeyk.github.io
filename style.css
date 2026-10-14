@@ -1,0 +1,590 @@
+/* ==================== تنظیمات کلی ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #1B2A4A;
+    --navy-dark: #111d33;
+    --yellow: #FFC107;
+    --yellow-dark: #e5a800;
+    --white: #ffffff;
+    --gray-light: #F5F7FA;
+    --gray-text: #555;
+}
+
+body {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background: var(--white);
+    color: var(--navy);
+    line-height: 1.8;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==================== هدر ==================== */
+.header {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo-art {
+    color: var(--white);
+}
+
+.logo-pick {
+    color: var(--yellow);
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav a:hover {
+    color: var(--yellow);
+}
+
+.header-phone {
+    background: var(--yellow);
+    color: var(--navy);
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.header-phone:hover {
+    background: var(--yellow-dark);
+    transform: translateY(-2px);
+}
+
+.menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* ==================== بنر اصلی ==================== */
+.hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: var(--white);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: var(--yellow);
+    opacity: 0.1;
+    border-radius: 50%;
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.hero-text h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 5px;
+    background: var(--yellow);
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-box {
+    font-size: 180px;
+    line-height: 1;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* ==================== دکمه‌ها ==================== */
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+.btn-yellow {
+    background: var(--yellow);
+    color: var(--navy);
+}
+
+.btn-yellow:hover {
+    background: var(--yellow-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255,193,7,0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-outline:hover {
+    background: var(--white);
+    color: var(--navy);
+}
+
+/* ==================== آمار ==================== */
+.stats {
+    background: var(--yellow);
+    padding: 40px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 15px;
+    color: var(--navy);
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+/* ==================== بخش‌ها ==================== */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 12px;
+    color: var(--navy);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--yellow);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--gray-text);
+    font-size: 17px;
+    margin-bottom: 50px;
+}
+
+/* ==================== خدمات ==================== */
+.services {
+    background: var(--gray-light);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.4s;
+    border-bottom: 4px solid transparent;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-bottom-color: var(--yellow);
+    box-shadow: 0 15px 35px rgba(27,42,74,0.15);
+}
+
+.service-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--navy);
+}
+
+.service-card p {
+    color: var(--gray-text);
+    font-size: 15px;
+}
+
+/* ==================== چرا ما ==================== */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.why-item {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.why-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.why-item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--navy);
+}
+
+.why-item p {
+    color: var(--gray-text);
+    font-size: 15px;
+}
+
+/* ==================== رهگیری ==================== */
+.tracking {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.tracking-inner {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tracking h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.tracking p {
+    opacity: 0.85;
+    margin-bottom: 30px;
+    font-size: 17px;
+}
+
+.tracking-form {
+    display: flex;
+    gap: 10px;
+    background: var(--white);
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.tracking-form input {
+    flex: 1;
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-family: inherit;
+    border-radius: 8px;
+    outline: none;
+}
+
+#trackingResult {
+    margin-top: 25px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+/* ==================== تماس ==================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.contact-info h3,
+.contact-form h3 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: var(--navy);
+}
+
+.contact-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 22px;
+    align-items: flex-start;
+}
+
+.contact-item span {
+    font-size: 22px;
+    background: var(--gray-light);
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-item a {
+    color: var(--navy);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: var(--yellow-dark);
+}
+
+.contact-form {
+    background: var(--gray-light);
+    padding: 35px;
+    border-radius: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 15px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.3s;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--yellow);
+}
+
+.contact-form .btn {
+    width: 100%;
+}
+
+/* ==================== فوتر ==================== */
+.footer {
+    background: var(--navy-dark);
+    color: var(--white);
+    padding-top: 60px;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-col h4 {
+    color: var(--yellow);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-col a,
+.footer-col p {
+    display: block;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 10px;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--yellow);
+}
+
+.footer-col .logo {
+    margin-bottom: 15px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    padding: 25px;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+}
+
+/* ==================== ریسپانسیو ==================== */
+@media (max-width: 900px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-text h1 {
+        font-size: 32px;
+    }
+    .hero-text h1::after {
+        margin: 20px auto 0;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .hero-box {
+        font-size: 120px;
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+    .nav.active {
+        display: flex;
+    }
+    .menu-btn {
+        display: block;
+    }
+    .header-phone {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-title {
+        font-size: 28px;
+    }
+    .hero-text h1 {
+        font-size: 26px;
+    }
+    .tracking-form {
+        flex-direction: column;
+    }
+}
